@@ -15,7 +15,7 @@ list_t *list_copy(list_t *list)
 	
 	if (list == NULL)
 		return (NULL);
-	new_list = malloc(sizeof(*element));
+	new_list = malloc(sizeof(*new_list));
 	new_list->data = list->data;
 	new_list->next = list_copy(list->next);
 	return (new_list);
