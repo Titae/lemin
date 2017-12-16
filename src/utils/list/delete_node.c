@@ -7,7 +7,6 @@
 
 #include <stdlib.h>
 #include "list.h"
-#include "env.h"
 #include "string.h"
 
 int delete_node(list_t **begin, list_t *node)
