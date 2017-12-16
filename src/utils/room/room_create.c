@@ -11,7 +11,7 @@
 #include "room.h"
 #include "list.h"
 
-room_t *room_create(char *name, int is_special, int pos x, int pos y)
+room_t *room_create(char *name, int is_special, int x, int y)
 {
 	room_t *node;
 
@@ -22,6 +22,6 @@ room_t *room_create(char *name, int is_special, int pos x, int pos y)
 	node->pos = malloc(sizeof(int) * 3);
 	node->pos[0] = x;
 	node->pos[1] = y;
-	node->link = NULL;
+	node->links = NULL;
 	return (node);
 }
