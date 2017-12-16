@@ -20,5 +20,8 @@ int delete_node(list_t **begin, list_t *node);
 list_t *get_node_by_name(list_t **begin, char *name);
 int list_size(list_t *begin);
 int put_in_list(list_t **list, void *data);
+int put_in_list_beg(list_t **list, void *data);
 int delete_node_by_name(list_t **begin, char *name);
+list_t *list_copy(list_t *list);
+
 #endif /* LIST_H_ */
