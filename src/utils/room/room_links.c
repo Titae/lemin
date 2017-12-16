@@ -18,7 +18,7 @@ void create_link(char *name_room1, char *name_room2, list_t *room_list)
 	if (list_room1 && list_room2) {
 		room1 = list_room1->data;
 		room2 = list_room2->data;
-		put_in_list(&(room1->links), room2);
-		put_in_list(&(room2->links), room1);
+		if (room1 != room2)
+			put_in_list(&(room1->links), room2);
 	}
 }
