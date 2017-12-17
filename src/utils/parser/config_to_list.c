@@ -26,7 +26,7 @@ static void handle_create_link(char *str, list_t **list)
 	char *name1 = my_dup("");
 	char *name2 = my_dup("");
 	int i = 0;
-      
+
 	while (str && str[i] != '\0' && str[i] != '-') {
 		my_sprintf(&name1, "%c", str[i++]);
 	}
@@ -45,7 +45,9 @@ static void handle_create_room(char **w_a, int is_special, list_t **list, int nb
 	if (nb >= 3) {
 		room = room_create(w_a[0], is_special,my_atoi(w_a[1]), my_atoi(w_a[2]));
 		if (is_special == 1)
-			room->nb_ant = nb_ant;
+			room->populate(room, nb_ant);
+		else if (is_special == 2)
+			room->ants = malloc(sizeof(ant_t *) * (nb_ant + 1));
 		put_in_list(list, room);
 	}
 }
