@@ -13,7 +13,7 @@ SRCS		=	$(shell find $(SRCDIR) -name '*.c')
 
 OBJS		=	$(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
-PROJECT		=	lemin
+PROJECT		=	lem_in
 
 CFLAGS		=	-I./include -L./lib
 CFLAGS		+=	$(DEBUG)
