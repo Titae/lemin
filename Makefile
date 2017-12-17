@@ -19,10 +19,10 @@ CFLAGS		=	-I./include -L./lib
 CFLAGS		+=	$(DEBUG)
 
 all:		buildrepo $(OBJS)
-		gcc -o $(PROJECT) $(OBJS) $(CFLAGS) -lmy_printf
+		gcc -o $(PROJECT) $(OBJS) $(CFLAGS) -lmy_printf -O3 -fno-builtin
 
 $(OBJDIR)/%.o: 	$(SRCDIR)/%.c
-		gcc -c $< -o $@ $(CFLAGS)
+		gcc -c $< -o $@ $(CFLAGS) -O3 -fno-builtin
 
 #tests_run:	all
 #		@make -C tests/
