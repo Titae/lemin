@@ -23,5 +23,10 @@ room_t *room_create(char *name, int is_special, int x, int y)
 	node->pos[0] = x;
 	node->pos[1] = y;
 	node->links = NULL;
+	if (is_special == 0)
+		node->ants = malloc(sizeof(ant_t *));
+	node->populate = &populate_room;
+	node->send_ant = &send_ant;
+	node->update = &update_room;
 	return (node);
 }
